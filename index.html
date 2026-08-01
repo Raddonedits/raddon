@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Dog Lair Amaral</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* CSS Reset & Variables */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-color: #6366f1;
+      --accent-hover: #4f46e5;
+      --button-bg: rgba(255, 255, 255, 0.07);
+      --button-hover-bg: rgba(255, 255, 255, 0.15);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-main);
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* Outer Wrapper for Entrance Animation */
+    .container {
+      width: 100%;
+      max-width: 440px;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px 28px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Profile Avatar */
+    .avatar-wrapper {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Header & Typography */
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--accent-color);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .bio {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* Links Container */
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 20px;
+      background: var(--button-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .link-card i {
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      transition: color 0.25s ease;
+    }
+
+    .link-card:hover {
+      background: var(--button-hover-bg);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .link-card:hover i {
+      color: #fff;
+    }
+
+    /* Social Icon Buttons Row */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .social-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--button-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.25s ease;
+    }
+
+    .social-icon:hover {
+      color: var(--text-main);
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 32px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="avatar-wrapper">
+      <img src="https://via.placeholder.com/150" alt="Profile Avatar">
+    </div>
+
+    <h1>Dog Lair Amaral</h1>
+    <p class="tagline">Content Creator & Digital Enthusiast</p>
+    <p class="bio">
+      Welcome to my page! Here you can find all my latest updates, projects, social links, and contact channels.
+    </p>
+
+    <div class="links-container">
+      <a href="https://youtube.com" target="_blank" class="link-card">
+        <i class="fa-brands fa-youtube"></i>
+        <span>Subscribe on YouTube</span>
+      </a>
+
+      <a href="https://instagram.com" target="_blank" class="link-card">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Follow on Instagram</span>
+      </a>
+
+      <a href="https://discord.com" target="_blank" class="link-card">
+        <i class="fa-brands fa-discord"></i>
+        <span>Join the Discord Community</span>
+      </a>
+
+      <a href="mailto:your-email@example.com" class="link-card">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact / Sponsorships</span>
+      </a>
+    </div>
+
+    <div class="social-row">
+      <a href="#" class="social-icon" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" class="social-icon" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#" class="social-icon" title="Twitch"><i class="fa-brands fa-twitch"></i></a>
+      <a href="#" class="social-icon" title="Spotify"><i class="fa-brands fa-spotify"></i></a>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Dog Lair Amaral
+    </footer>
+  </div>
+
+  <script>
+    // Automatically set dynamic year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
